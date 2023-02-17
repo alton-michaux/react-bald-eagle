@@ -1,9 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import TodoList from "./lists/TodoList";
+import TitleImage from './elements/TitleImage';
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FloatingDiv } from "./modals/FloatingDiv";
 import styles from "../Assets/css/App.module.css";
+import TodoListSvg from "../Assets/sign-up-application-svgrepo-com.svg"
 
 const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow, handleClose }) => {
 	let navigate = useNavigate();
@@ -15,9 +17,11 @@ const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow,
 
 	return (
 		<div className={styles.currentList}>
-			<Button variant="dark" onClick={handleShow} className={styles.openButton}>
-				Add Task
-			</Button>
+			<div className={styles.buttonDiv}>
+				<Button variant="dark" onClick={handleShow} className={styles.openButton}>
+					Add Task
+				</Button>
+			</div>
 
 			<FloatingDiv
 				currentUser={currentUser}
@@ -30,7 +34,11 @@ const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow,
 			>Add tasks to {currentUser}'s list</FloatingDiv>
 
 			<div className={styles.listDiv}>
-				<h1 className={styles.mainTitle}>{currentUser}'s Todo List</h1>
+				<TitleImage
+					user={currentUser}
+					svg={TodoListSvg}
+					text="Save Time"
+				></TitleImage>
 				<div className={styles.todoItems}>
 					{todoList.isError && <p style={{ color: 'white' }}>Something went wrong...</p>}
 

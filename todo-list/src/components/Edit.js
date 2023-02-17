@@ -2,8 +2,10 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import TodoList from "./lists/TodoList";
+import TitleImage from "../components/elements/TitleImage"
 import { FloatingDiv } from "./modals/FloatingDiv";
 import styles from "../Assets/css/App.module.css";
+import TodoListSvg from "../Assets/sign-up-application-svgrepo-com.svg"
 
 const Edit = ({ user, todoList, removeTodo, show, handleClose, handleShow }) => {
 	let navigate = useNavigate();
@@ -15,9 +17,11 @@ const Edit = ({ user, todoList, removeTodo, show, handleClose, handleShow }) => 
 
 	return (
 		<div className={styles.currentList}>
-			<Button variant="dark" onClick={handleShow} className={styles.openButton}>
-				View Your List
-			</Button>
+			<div className={styles.buttonDiv}>
+				<Button variant="dark" onClick={handleShow} className={styles.openButton}>
+					View Your List
+				</Button>
+			</div>
 
 			<FloatingDiv
 				currentUser={user}
@@ -30,7 +34,11 @@ const Edit = ({ user, todoList, removeTodo, show, handleClose, handleShow }) => 
 
 
 			<div className={styles.listDiv}>
-				<h1 className={styles.mainTitle}>{user}'s Todo List</h1>
+				<TitleImage
+					user={user}
+					svg={TodoListSvg}
+					text="Save Time"
+				></TitleImage>
 				<div className={styles.todoItems}>
 					{todoList.isError && <p>Something went wrong...</p>}
 
