@@ -1,11 +1,3 @@
-# Welcome to the Bald Eagle React Class!  
+# Todo List App
 
-### During class you will be building **TWO** React apps...
-
-The **FIRST** will be a **BLOG APP** that you build while working through the class textbook.
-The blog app you will create completely from scratch following the book instructions.  _You should keep your work for the blog app in a separate repository._  
-
-The **SECOND** will be a **TO-DO LIST APP** that you will build as extra coding practice during your coding assignments throughout the class.  
-
-**[Click here](https://github.com/Code-the-Dream-School/react-bald-eagle/wiki) to redirect to the Wiki for this repository.  
-Read the Project Setup section and then follow the link to the General Instructions to get started.**
+## Deploy status: [![Netlify Status](https://api.netlify.com/api/v1/badges/c9ae72c2-0c57-491a-9d59-3bc3570eaf62/deploy-status)](https://app.netlify.com/sites/altons-todo-list/deploys)
