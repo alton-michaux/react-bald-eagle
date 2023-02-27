@@ -1,3 +1,21 @@
+body {
+	overflow-x: hidden;
+	min-height: 100vh;
+}
+
+h1 {
+	padding: 10px;
+	font-weight: 300;
+}
+
+form {
+	padding: 10px;
+}
+
+label {
+	padding: 5px;
+}
+
 .listDiv {
 	display: flex;
 	flex-direction: column;
