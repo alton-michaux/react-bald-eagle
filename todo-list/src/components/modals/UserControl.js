@@ -3,7 +3,8 @@ import { DownloadTableExcel } from 'react-export-table-to-excel';
 import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import NavButton from '../inputs-forms/NavButton';
-import styles from "../../Assets/css/App.module.css";
+import styles from "../../Assets/css/UserControl.module.css";
+import navStyles from "../../Assets/css/NavButton.module.css"
 
 const UserControl = ({ searchHandler, handler, children, onClick, updateList, currentUser, buttonText, routeChange, tableRef }) => {
   const [input, setInput] = useState('')
@@ -25,14 +26,14 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
         <Button
           variant='dark'
           onClick={onClick}
-          className={styles.openButton}
+          className={navStyles.openButton}
         >Home</Button>
       </span>
 
       {
         buttonText === "Edit List" ?
           <span>
-            <Button variant="dark" onClick={handler} className={styles.openButton}>
+            <Button variant="dark" onClick={handler} className={navStyles.openButton}>
               {children}
             </Button>
           </span> : <></>
@@ -47,7 +48,7 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
       </span>
 
       <span>
-        <Button variant="dark" onClick={updateList} className={styles.openButton}>
+        <Button variant="dark" onClick={updateList} className={navStyles.openButton}>
           Refresh List
         </Button>
       </span>
@@ -58,7 +59,7 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
         currentTableRef={tableRef}
       >
 
-        <Button variant="dark" className={styles.openButton}> Export List </Button>
+        <Button variant="dark" className={navStyles.openButton}> Export List </Button>
 
       </DownloadTableExcel>
 

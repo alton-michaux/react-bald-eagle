@@ -4,7 +4,7 @@ import TodoList from "../lists/TodoList";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { FloatingDiv } from "../modals/FloatingDiv";
-import styles from "../../Assets/css/App.module.css";
+import styles from "../../Assets/css/ListState.module.css";
 
 const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow, handleClose, handleSearch, updateList }) => {
 	let navigate = useNavigate();
