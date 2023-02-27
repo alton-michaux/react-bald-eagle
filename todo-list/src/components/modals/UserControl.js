@@ -17,7 +17,6 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
     searchHandler(input)
   }, [input])
 
-  console.log('tableRef', tableRef)
   return (
     <div className={styles.infoDiv}>
       <h1 className={styles.mainTitle}>{currentUser}'s Todo List</h1>
