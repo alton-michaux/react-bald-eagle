@@ -48,7 +48,7 @@ const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow,
 
 					{todoList.isLoading ? <p style={{ color: 'white' }}>Loading...</p>
 						: todoList.data.length > 0 ?
-							<TodoList todoList={todoList.data} onDone={onDone} path={path} ref={tableRef} /> :
+							<TodoList todoList={todoList.data} onDone={onDone} path={path} tableRef={tableRef} /> :
 							<p style={{ color: 'white' }}>No Data</p>
 					}
 				</div>

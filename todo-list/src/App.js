@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useReducer, useCallback } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
-import Home from "./Home"
+import Home from "./components/pages/Home"
 import ListReducer from "./Reducer";
 import NewList from "./components/pages/New";
 import CurrentList from "./components/pages/Current";

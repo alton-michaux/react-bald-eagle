@@ -17,6 +17,7 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
     searchHandler(input)
   }, [input])
 
+  console.log('tableRef', tableRef)
   return (
     <div className={styles.infoDiv}>
       <h1 className={styles.mainTitle}>{currentUser}'s Todo List</h1>
@@ -28,14 +29,15 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
           className={styles.openButton}
         >Home</Button>
       </span>
-      <span>
-        {
-          buttonText === "Edit List" ?
+
+      {
+        buttonText === "Edit List" ?
+          <span>
             <Button variant="dark" onClick={handler} className={styles.openButton}>
               {children}
-            </Button> : <></>
-        }
-      </span>
+            </Button>
+          </span> : <></>
+      }
 
       <span>
         <NavButton

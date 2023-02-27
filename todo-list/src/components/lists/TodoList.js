@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import TodoListItem from "./TodoListItem";
 import styles from "../../Assets/css/App.module.css";
 
-const TodoList = ({ todoList, onRemoveTodo, onDone, path }) => {
+const TodoList = ({ todoList, onRemoveTodo, onDone, path, tableRef }) => {
   return (
-    <ul className={styles.todoList} style={{ listStyleType: "none" }}>
+    <ul className={styles.todoList} style={{ listStyleType: "none" }} ref={tableRef}>
       {todoList.map(function (todo) {
         return (
           <TodoListItem key={todo.id} todo={todo} onRemoveTodo={onRemoveTodo} handleDoneChange={onDone} path={path} />
@@ -19,7 +19,8 @@ TodoList.propTypes = {
   todoList: PropTypes.array.isRequired,
   onRemoveTodo: PropTypes.func,
   onDone: PropTypes.func,
-  path: PropTypes.string
+  path: PropTypes.string,
+  tableRef: PropTypes.object
 }
 
 export default TodoList;
