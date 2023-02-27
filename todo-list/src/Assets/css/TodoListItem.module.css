@@ -1,0 +1,55 @@
+.itemEdit {
+	padding: 5px;
+	color:rgb(212, 211, 215);
+	font-weight: 700;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.item {
+	padding: 5px;
+	color:rgb(212, 211, 215);
+	font-weight: 700;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+.item:hover {
+	box-shadow: 1px 1px 8px 2px rgb(126, 203, 207);
+	padding: 5px;
+	height: 110%;
+	width: 100%;
+}
+
+.removeTodo {
+	bottom: 0;
+	max-width: 50%;
+}
+
+@media screen and (max-width: 901px) {
+	.itemEdit {
+		text-align: left;
+		min-width: 80vw;
+		align-items: center;
+	}
+
+	.item {
+		display: flex;
+		flex-direction: row;
+		text-align: center;
+		min-width: 80vw;
+	}
+
+	.removeTodo {
+		max-height: 45px;
+	}
+}
+
+@media screen and (min-width: 1301px) {	
+	.removeTodo {
+		margin: 0 auto;
+		margin-right: 0;
+	}
+}
