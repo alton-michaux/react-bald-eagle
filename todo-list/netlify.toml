@@ -12,7 +12,7 @@
   # a base has not been set. This sample publishes the directory
   # located at the absolute path "root/project/build-output"
 
-  publish = "/todo-list/build"
+  publish = "/build"
 
   # Default build command.
   CI= "npm run build"
@@ -24,7 +24,7 @@
 # Deploy Preview context: all deploys generated from
 # a pull/merge request will inherit these settings.
 [context.deploy-preview]
-  publish = "todo-list/build/"
+  publish = "/build"
 
 # Branch Deploy context: all deploys that are not from
 # a pull/merge request or from the Production branch
