@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import styles from "../../Assets/css/App.module.css";
+import styles from "../../Assets/css/TodoListItem.module.css";
 import InputWithLabel from "../inputs-forms/InputWithLabel";
 
 const TodoListItem = ({ todo, onRemoveTodo, handleDoneChange }) => {
