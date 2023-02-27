@@ -44,11 +44,6 @@ label {
 	margin: 0 auto;
 }
 
-.openButton {
-	margin: 0 auto;
-	margin-top: 5%;
-}
-
 .mainTitle {
 	color: white;
 	text-shadow: 2px 2px rgb(29, 130, 135);
@@ -65,14 +60,6 @@ label {
 	margin: 5% 0 0;
 	margin-top: 2%;
 	text-shadow: 2px 2px rgb(29, 130, 135);
-}
-
-.addTodoButton {
-	margin-top: 3%;
-	margin: 0 auto;
-	min-width: 50%;
-	padding-top: 15px;
-	text-align: center;
 }
 
 .infoDiv {
@@ -152,20 +139,8 @@ label {
 		justify-content: center;
 	}
 
-	.openButton {
-		margin-bottom: 5%;
-		min-width: 50vw;
-		min-height: 6.5vh;
-		font-size: 40px;
-	}
-
 	.mainTitle {
 		font-size: 45px;
-	}
-
-	.addTodoButton {
-		margin-top: 10%;
-		width: 50%;
 	}
 
 	.infoDiv {
@@ -185,18 +160,6 @@ label {
 	.todoList {
 		padding: 10px;
 		font-size: 20px;
-	}
-
-	.inputForm {
-		display: flex;
-		flex-direction: column;
-		padding-bottom: 5px;
-		margin-bottom: 10px;
-		align-items: center;
-	}
-
-	.todoInput {
-		margin-right: 2.5px;
 	}
 
 	.todoItems {
@@ -240,10 +203,6 @@ label {
 	.listDiv {
 		margin-top: 12%;
 	}
-
-	.openButton {
-		margin: 0 auto;
-	}
 }
 
 @media screen and (min-width: 1301px) {	
@@ -268,21 +227,9 @@ label {
 		padding: 15px;
 	}
 	
-	.openButton {
-		max-height: 50px;
-		min-width: 100%;
-		margin-bottom: 5%;
-	}
-	
 	.searchInput {
 		margin-top: 5%;
 		max-height: 2.5%;
-	}
-	
-	.inputForm {
-		display: flex;
-		flex-direction: column;
-		margin: 0 25% 0;
 	}
 
 	.todoItems {
@@ -292,17 +239,6 @@ label {
     right: 0;
     height: 100vh;
     min-width: 80vw;
-	}
-	
-	.todoInput {
-		padding: 10px;
-	}
-
-	.addTodoButton {
-		margin-top: 5%;
-		margin-bottom: 5%;
-		width: inherit;
-		padding: 10px;
 	}
 
 	.todoList {
