@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "../../Assets/css/App.module.css";
+import styles from "../../Assets/css/InputWithLabel.module.css";
 
 const InputWithLabel = ({
   todoTitle,
