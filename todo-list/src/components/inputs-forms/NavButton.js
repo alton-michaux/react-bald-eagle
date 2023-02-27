@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
-import styles from '../../Assets/css/App.module.css'
+import styles from '../../Assets/css/NavButton.module.css'
 
 const NavButton = ({ action, children, path }) => {
 	const handleClick = (path) => {

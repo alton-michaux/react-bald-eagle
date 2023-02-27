@@ -1,0 +1,27 @@
+.openButton {
+	margin: 0 auto;
+	margin-top: 5%;
+}
+
+@media screen and (max-width: 901px) {
+	.openButton {
+		margin-bottom: 5%;
+		min-width: 50vw;
+		min-height: 6.5vh;
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 1301px) and (min-width: 901px) {	
+	.openButton {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 1301px) {	
+	.openButton {
+		max-height: 50px;
+		min-width: 100%;
+		margin-bottom: 5%;
+	}
+}
