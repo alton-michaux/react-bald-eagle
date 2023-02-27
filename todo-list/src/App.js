@@ -70,10 +70,10 @@ const App = () => {
         const data = await response.json()
 
         const sortedRecords = data.records.sort((recordA, recordB) => {
-          if (recordA.fields.Name > recordB.fields.Name) {
+          if (recordA.createdTime > recordB.createdTime) {
             return 1
           }
-          if (recordA.fields.Name < recordB.fields.Name) {
+          if (recordA.createdTime < recordB.createdTime) {
             return -1
           } else {
             return 0

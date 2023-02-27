@@ -54,10 +54,9 @@ Edit.propTypes = {
 	user: PropTypes.string.isRequired,
 	todoList: PropTypes.object.isRequired,
 	removeTodo: PropTypes.func.isRequired,
-	show: PropTypes.bool.isRequired,
-	handleClose: PropTypes.func,
 	handleShow: PropTypes.func.isRequired,
-	handleSearch: PropTypes.func.isRequired
+	handleSearch: PropTypes.func.isRequired,
+	updateList: PropTypes.func.isRequired
 }
 
 export default Edit
