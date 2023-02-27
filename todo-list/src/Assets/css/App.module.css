@@ -83,14 +83,6 @@ label {
 	min-width: 80vw;
 }
 
-.todoList {
-	width: 100%;
-	padding: 20px;
-	flex-direction: column;
-	margin: 0 auto;
-	top: 0;
-}
-
 .currentList {
 	display: flex;
 	flex-direction: column;
@@ -155,11 +147,6 @@ label {
 		max-width: 50%;
 		min-height: 10vh;
 		font-size: 30px;
-	}
-
-	.todoList {
-		padding: 10px;
-		font-size: 20px;
 	}
 
 	.todoItems {
@@ -239,20 +226,6 @@ label {
     right: 0;
     height: 100vh;
     min-width: 80vw;
-	}
-
-	.todoList {
-		padding-top: 10px;
-		padding-bottom: 10px;
-		width: 80%;
-		box-shadow: 1px 1px 8px 2px rgb(126, 203, 207);
-		background-color: rgb(0, 46, 48);
-		background-image: url('https://www.pngall.com/wp-content/uploads/5/Flying-Flock-of-Birds-PNG-File.png');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-blend-mode: multiply;
-		background-attachment: fixed;
-		margin-bottom: 40px;
 	}
 
 	.removeTodo {
