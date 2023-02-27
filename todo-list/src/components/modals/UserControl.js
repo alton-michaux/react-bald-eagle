@@ -15,7 +15,7 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
 
   useEffect(() => {
     searchHandler(input)
-  }, [input])
+  }, [input, searchHandler])
 
   return (
     <div className={styles.infoDiv}>

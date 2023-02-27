@@ -41,7 +41,7 @@ const Edit = ({ user, todoList, removeTodo, handleShow, handleSearch, updateList
 
 					{todoList.isLoading ? <p style={{ color: 'white' }}>Loading...</p>
 						: todoList.data.length > 0 ?
-							<TodoList todoList={todoList.data} onRemoveTodo={removeTodo} path={path} tableRef={tableRef}/> :
+							<TodoList todoList={todoList.data} onRemoveTodo={removeTodo} path={path} tableRef={tableRef} /> :
 							<p style={{ color: 'white' }}>No Data</p>
 					}
 				</div>
