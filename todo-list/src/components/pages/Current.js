@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import UserControl from "../modals/UserControl";
 import TodoList from "../lists/TodoList";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +19,8 @@ const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow,
 		}
 	}
 
+	const tableRef = useRef(null)
+
 	return (
 		<div className={styles.currentList}>
 			<UserControl
@@ -29,6 +32,7 @@ const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow,
 				updateList={updateList}
 				buttonText={"Edit List"}
 				currentUser={currentUser}
+				tableRef={tableRef.current}
 			>Add Task</UserControl>
 
 			<FloatingDiv
@@ -44,7 +48,7 @@ const CurrentList = ({ todoList, addTodo, currentUser, onDone, show, handleShow,
 
 					{todoList.isLoading ? <p style={{ color: 'white' }}>Loading...</p>
 						: todoList.data.length > 0 ?
-							<TodoList todoList={todoList.data} onDone={onDone} path={path} /> :
+							<TodoList todoList={todoList.data} onDone={onDone} path={path} ref={tableRef} /> :
 							<p style={{ color: 'white' }}>No Data</p>
 					}
 				</div>

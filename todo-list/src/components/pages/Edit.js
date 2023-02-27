@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import UserControl from '../modals/UserControl';
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -17,6 +18,8 @@ const Edit = ({ user, todoList, removeTodo, handleShow, handleSearch, updateList
 		}
 	}
 
+	const tableRef = useRef(null)
+
 	return (
 		<div className={styles.currentList}>
 			<UserControl
@@ -28,6 +31,7 @@ const Edit = ({ user, todoList, removeTodo, handleShow, handleSearch, updateList
 				path={path}
 				buttonText={"View List"}
 				currentUser={user}
+				tableRef={tableRef.current}
 			>View Your List</UserControl>
 
 
@@ -37,7 +41,7 @@ const Edit = ({ user, todoList, removeTodo, handleShow, handleSearch, updateList
 
 					{todoList.isLoading ? <p style={{ color: 'white' }}>Loading...</p>
 						: todoList.data.length > 0 ?
-							<TodoList todoList={todoList.data} onRemoveTodo={removeTodo} path={path} /> :
+							<TodoList todoList={todoList.data} onRemoveTodo={removeTodo} path={path} ref={tableRef}/> :
 							<p style={{ color: 'white' }}>No Data</p>
 					}
 				</div>

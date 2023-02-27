@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import NavButton from '../inputs-forms/NavButton';
 import styles from "../../Assets/css/App.module.css";
 
-const UserControl = ({ searchHandler, handler, children, onClick, updateList, currentUser, buttonText, routeChange }) => {
+const UserControl = ({ searchHandler, handler, children, onClick, updateList, currentUser, buttonText, routeChange, tableRef }) => {
   const [input, setInput] = useState('')
 
   const handleSearch = (event) => {
@@ -21,28 +21,46 @@ const UserControl = ({ searchHandler, handler, children, onClick, updateList, cu
     <div className={styles.infoDiv}>
       <h1 className={styles.mainTitle}>{currentUser}'s Todo List</h1>
 
-      <Button
-        variant='dark'
-        onClick={onClick}
-        className={styles.openButton}
-      >Home</Button>
+      <span>
+        <Button
+          variant='dark'
+          onClick={onClick}
+          className={styles.openButton}
+        >Home</Button>
+      </span>
+      <span>
+        {
+          buttonText === "Edit List" ?
+            <Button variant="dark" onClick={handler} className={styles.openButton}>
+              {children}
+            </Button> : <></>
+        }
+      </span>
 
-      {
-        buttonText === "Edit List" ?
-          <Button variant="dark" onClick={handler} className={styles.openButton}>
-            {children}
-          </Button> : <></>
-      }
+      <span>
+        <NavButton
+          type="button"
+          action={routeChange}
+          path={'/edit'}
+        >{buttonText}</NavButton>
+      </span>
 
-      <NavButton
-        type="button"
-        action={routeChange}
-        path={'/edit'}
-      >{buttonText}</NavButton>
+      <span>
+        <Button variant="dark" onClick={updateList} className={styles.openButton}>
+          Refresh List
+        </Button>
+      </span>
 
-      <Button variant="dark" onClick={updateList} className={styles.openButton}>
-        Refresh List
-      </Button>
+      <DownloadTableExcel
+        filename="todo list"
+        sheet="todos"
+        currentTableRef={tableRef}
+      >
+
+        <Button variant="dark" className={styles.openButton}> Export List </Button>
+
+      </DownloadTableExcel>
+
       <input
         className={styles.searchInput}
         type="text"
@@ -61,7 +79,8 @@ UserControl.propTypes = {
   updateList: PropTypes.func.isRequired,
   currentUser: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
-  routeChange: PropTypes.func
+  routeChange: PropTypes.func,
+  tableRef: PropTypes.object
 }
 
 export default UserControl
