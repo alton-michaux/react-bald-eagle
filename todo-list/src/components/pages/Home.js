@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import NavButton from "../inputs-forms/NavButton";
-import styles from "../../Assets/css/App.module.css";
+import styles from "../../Assets/css/Home.module.css";
 
 const Home = ({ user }) => {
   let navigate = useNavigate();
