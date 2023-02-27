@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { DownloadTableExcel } from 'react-export-table-to-excel';
 import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import NavButton from '../inputs-forms/NavButton';
@@ -56,7 +57,11 @@ UserControl.propTypes = {
   searchHandler: PropTypes.func,
   handler: PropTypes.func,
   children: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  updateList: PropTypes.func.isRequired,
+  currentUser: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  routeChange: PropTypes.func
 }
 
 export default UserControl
