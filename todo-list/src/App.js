@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useReducer, useCallback } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
+import Home from "./components/pages/Home"
 import ListReducer from "./Reducer";
-import NewList from "./components/New";
-import CurrentList from "./components/Current";
-import EditList from "./components/Edit";
+import NewList from "./components/pages/New";
+import CurrentList from "./components/pages/Current";
+import EditList from "./components/pages/Edit";
 
 const App = () => {
   const [todoList, dispatchTodoList] = useReducer(ListReducer,
@@ -20,6 +21,8 @@ const App = () => {
   const handleShow = () => setShow(true)
   const handleClose = () => setShow(false)
 
+  // filter list for search
+
   const handleListFilter = (input) => {
     const originalTodoList = JSON.parse(localStorage.getItem('todoList'))
 
@@ -27,11 +30,13 @@ const App = () => {
 
     const filteredList = originalTodoList.filter((data) => {
       return (
-        data.fields.Name.includes(input)
+        data.fields.Name.toLowerCase().includes(input.toLowerCase())
       )
     })
     dispatchTodoList({ type: 'LIST_FETCH_SUCCESS', payload: [...filteredList] })
   }
+
+  // store user name in local storage
 
   useEffect(() => {
     if (localStorage.getItem('user')) {
@@ -44,6 +49,9 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('user', JSON.stringify(user))
   }, [user])
+
+  // perform api calls 
+  // TODO: move these into utils.js file
 
   const fetchTodos = useCallback(async () => {
     if (!endpoint) return
@@ -60,11 +68,12 @@ const App = () => {
 
       if (response.ok) {
         const data = await response.json()
+
         const sortedRecords = data.records.sort((recordA, recordB) => {
-          if (recordA.fields.Name > recordB.fields.Name) {
+          if (recordA.createdTime > recordB.createdTime) {
             return 1
           }
-          if (recordA.fields.Name < recordB.fields.Name) {
+          if (recordA.createdTime < recordB.createdTime) {
             return -1
           } else {
             return 0
@@ -124,6 +133,8 @@ const App = () => {
 
         const newTodos = [...todoList.data, newFormat]
 
+        localStorage.setItem('todoList', JSON.stringify([...newTodos])) // store copy of todoList for filtering
+
         dispatchTodoList({
           type: 'LIST_FETCH_SUCCESS',
           payload: [...newTodos]
@@ -179,6 +190,8 @@ const App = () => {
       if (response.ok) {
         const newTodos = todoList.data.filter(todo => todo.id !== id)
 
+        localStorage.setItem('todoList', JSON.stringify([...newTodos])) // store copy of todoList for filtering
+
         dispatchTodoList({
           type: 'LIST_FETCH_SUCCESS',
           payload: [...newTodos]
@@ -197,6 +210,16 @@ const App = () => {
           exact
           path='/'
           element={
+            <Home
+              user={user}
+            ></Home>
+          }
+        >
+        </Route>
+        <Route
+          exact
+          path='/view'
+          element={
             <CurrentList
               todoList={todoList}
               addTodo={addTodo}
@@ -208,6 +231,7 @@ const App = () => {
               handleClose={handleClose}
               handleShow={handleShow}
               handleSearch={handleListFilter}
+              updateList={fetchTodos}
             ></CurrentList>
           }
         >
@@ -225,6 +249,7 @@ const App = () => {
               handleClose={handleClose}
               handleShow={handleShow}
               handleSearch={handleListFilter}
+              updateList={fetchTodos}
             ></EditList>
           }
         ></Route>

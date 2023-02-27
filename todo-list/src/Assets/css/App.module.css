@@ -16,15 +16,37 @@ label {
 	padding: 5px;
 }
 
-.openButton {
-	margin: 0 auto;
-	margin-top: 10%;
-}
-
-.listDiv {
+.welcomeDiv {
+	height: 100vh;
+	margin-top: 0;
 	display: flex;
 	flex-direction: column;
-	min-width: 80vw;
+	background-image: linear-gradient(180deg, rgb(1, 90, 94), rgb(0, 22, 23));
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-blend-mode: multiply;
+	background-attachment: fixed;
+	color: white;
+}
+
+.welcomeHeader {
+	padding-top: 10%;
+	width: 100%;
+	max-height: 20vh;
+	text-align: center;
+	padding-bottom: 10%;
+}
+
+.buttonDiv {
+	min-height: 5vh;
+	max-width: 20vw;
+	display: grid;
+	margin: 0 auto;
+}
+
+.openButton {
+	margin: 0 auto;
+	margin-top: 5%;
 }
 
 .mainTitle {
@@ -57,21 +79,21 @@ label {
 	display: flex;
 	grid-template-rows: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	max-width: 100%;
-}
-
-.navigationButton {
-	max-width: 50%;
-	margin: 0 auto;
-	margin-bottom: 5%;
-	margin-top: 5%;
+	max-height: 90vh;
 }
 
 .searchInput {
-	position: absolute;
-	max-height: 3%;
+	min-height: 5%;
 	padding: 1%;
+	text-align: center;
+}
+
+.listDiv {
+	display: flex;
+	flex-direction: column;
+	min-width: 80vw;
 }
 
 .todoList {
@@ -79,6 +101,7 @@ label {
 	padding: 20px;
 	flex-direction: column;
 	margin: 0 auto;
+	top: 0;
 }
 
 .currentList {
@@ -123,20 +146,40 @@ label {
 	max-width: 50%;
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 901px) {
+	.buttonDiv {
+		display: flex;
+		justify-content: center;
+	}
+
+	.openButton {
+		margin-bottom: 5%;
+		min-width: 50vw;
+		min-height: 6.5vh;
+		font-size: 40px;
+	}
+
+	.mainTitle {
+		font-size: 45px;
+	}
+
 	.addTodoButton {
 		margin-top: 10%;
+		width: 50%;
 	}
 
 	.infoDiv {
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+		flex-direction: column-reverse;
+		justify-content: space-evenly;
+		margin-top: 5%;
 	}
 
 	.searchInput {
-		margin-top: 4%;
+		top: 1%;
 		max-width: 50%;
+		min-height: 10vh;
+		font-size: 30px;
 	}
 
 	.todoList {
@@ -182,7 +225,32 @@ label {
 	}
 }
 
-@media screen and (min-width: 1000px) {	
+@media screen and (max-width: 1301px) and (min-width: 901px) {	
+	.infoDiv {
+		display: flex;
+		position: fixed;
+		flex-direction: row;
+		justify-content: space-between;
+		background-image: linear-gradient(180deg, rgb(1, 90, 94), rgb(0, 22, 23));
+		padding: 2%;
+		max-height: 10%;
+		width: 100vw;
+	}
+
+	.listDiv {
+		margin-top: 12%;
+	}
+
+	.openButton {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 1301px) {	
+	.welcomeDiv {
+		background-image: url('https://www.freepnglogos.com/uploads/mountain-png/mountain-png-online-marketing-all-solutions-0.png'),linear-gradient(180deg, rgb(1, 90, 94), rgb(0, 22, 23));
+	}
+
 	.currentList{
 		display: flex;
 		flex-direction: row;
@@ -197,16 +265,18 @@ label {
 		flex-direction: column;
 		justify-self: center;
 		margin-left: 7%;
+		padding: 15px;
 	}
 	
 	.openButton {
 		max-height: 50px;
 		min-width: 100%;
-		margin-bottom: 15%;
+		margin-bottom: 5%;
 	}
 	
 	.searchInput {
-		margin-top: 25%;
+		margin-top: 5%;
+		max-height: 2.5%;
 	}
 	
 	.inputForm {
@@ -216,7 +286,7 @@ label {
 	}
 
 	.todoItems {
-		padding-top: 15vh;
+		padding-top: 5vh;
     overflow-y: scroll;
     position: fixed;
     right: 0;
@@ -241,6 +311,11 @@ label {
 		width: 80%;
 		box-shadow: 1px 1px 8px 2px rgb(126, 203, 207);
 		background-color: rgb(0, 46, 48);
+		background-image: url('https://www.pngall.com/wp-content/uploads/5/Flying-Flock-of-Birds-PNG-File.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-blend-mode: multiply;
+		background-attachment: fixed;
 		margin-bottom: 40px;
 	}
 
