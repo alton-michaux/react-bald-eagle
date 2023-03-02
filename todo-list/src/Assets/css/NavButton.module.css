@@ -1,6 +1,11 @@
 .openButton {
 	margin: 0 auto;
 	margin-top: 5%;
+	font-family: 'Cairo Play', cursive;
+}
+
+.openButton:has(div.active) {
+	font-family: 'Cairo Play', cursive;
 }
 
 @media screen and (max-width: 901px) {
@@ -12,13 +17,13 @@
 	}
 }
 
-@media screen and (max-width: 1301px) and (min-width: 901px) {	
+@media screen and (max-width: 1301px) and (min-width: 901px) {
 	.openButton {
 		margin: 0 auto;
 	}
 }
 
-@media screen and (min-width: 1301px) {	
+@media screen and (min-width: 1301px) {
 	.openButton {
 		max-height: 50px;
 		min-width: 100%;
