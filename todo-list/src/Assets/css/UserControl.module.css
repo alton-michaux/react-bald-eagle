@@ -3,6 +3,7 @@
 	text-shadow: 2px 2px rgb(29, 130, 135);
 	z-index: 0;
 	opacity: 50%;
+	font-family: 'Cairo Play', cursive;
 }
 
 .mainTitle:scroll {
@@ -44,7 +45,7 @@
 	}
 }
 
-@media screen and (max-width: 1301px) and (min-width: 901px) {	
+@media screen and (max-width: 1301px) and (min-width: 901px) {
 	.infoDiv {
 		display: flex;
 		position: fixed;
@@ -57,7 +58,7 @@
 	}
 }
 
-@media screen and (min-width: 1301px) {	
+@media screen and (min-width: 1301px) {
 	.infoDiv {
 		width: 25%;
 		display: flex;
@@ -66,7 +67,7 @@
 		margin-left: 7%;
 		padding: 15px;
 	}
-	
+
 	.searchInput {
 		margin-top: 5%;
 		max-height: 2.5%;
